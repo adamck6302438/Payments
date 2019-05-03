@@ -1,20 +1,20 @@
 //
-//  AmazonPaymentService.m
+//  ApplePaymentService.m
 //  Payments
 //
 //  Created by Frances ZiyiFan on 5/3/19.
 //  Copyright © 2019 Ray Kang. All rights reserved.
 //
 
-#import "AmazonPaymentService.h"
+#import "ApplePaymentService.h"
 
-@implementation AmazonPaymentService
+@implementation ApplePaymentService
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        _output = @"Amazon";
+        _output = @"Apple";
     }
     return self;
 }

@@ -10,4 +10,26 @@
 
 @implementation StripePaymentService
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _output = @"Stripe";
+    }
+    return self;
+}
+
+- (void)processPaymentAmount:(NSInteger)amount{
+    NSLog(@"%@ processed amount %ld", self.output, amount);
+}
+
+- (BOOL)canProcessPayment{
+    return arc4random_uniform(2);
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@", self.output];
+}
+
 @end

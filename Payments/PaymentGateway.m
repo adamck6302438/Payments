@@ -8,10 +8,15 @@
 
 #import "PaymentGateway.h"
 
+
 @implementation PaymentGateway
 
 - (void) processPaymentAmount: (NSInteger)amount{
-    
+    if([self.delegate canProcessPayment]){
+        [self.delegate processPaymentAmount:amount];
+    }else{
+        NSLog(@"%@ is unable to process your payment.", self.delegate);
+    }
 }
 
 @end

@@ -10,4 +10,26 @@
 
 @implementation PaypalPaymentService
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _output = @"Paypal";
+    }
+    return self;
+}
+
+- (void)processPaymentAmount:(NSInteger)amount{
+    NSLog(@"%@ processed amount %ld", self.output, (long)amount);
+}
+
+- (BOOL)canProcessPayment{
+    return arc4random_uniform(2);
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@", self.output];
+}
+
 @end
